@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #0b1d2a;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.buttons img {
+  width: 90px;
+  margin: 15px;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.buttons img:hover {
+  transform: scale(1.15);
+}
+
+/* PAGE 3 */
+.photos img {
+  position: absolute;
+  width: 160px;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0px); }
+}
+
+/* BUNGA */
+.flower {
+  position: fixed;
+  top: -20px;
+  color: #5dade2;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(110vh); }
+}
+
+/* PAGE 4 */
+.message-box {
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+.choice button {
+  padding: 12px 30px;
+  margin: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #3498db;
+  color: white;
+}
+
+#noBtn {
+  background: #555;
+  color: white;
+}
