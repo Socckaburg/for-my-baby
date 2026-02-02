@@ -1,25 +1,32 @@
 const music = document.getElementById("music");
+let isPlaying = false;
 
 function playMusic() {
-  music.play();
+  if (!isPlaying) {
+    music.play();
+    isPlaying = true;
+  }
 }
 
-function createFlower() {
-  const flower = document.createElement("div");
-  flower.className = "flower";
-  flower.innerHTML = "❀";
-  flower.style.left = Math.random() * 100 + "vw";
-  flower.style.animationDuration = (Math.random() * 3 + 4) + "s";
-  document.body.appendChild(flower);
-
-  setTimeout(() => flower.remove(), 7000);
+function goPage(num) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById("page" + num).classList.add("active");
 }
 
-setInterval(createFlower, 400);
+function flowerRain() {
+  const f = document.createElement("div");
+  f.className = "flower";
+  f.innerHTML = "❀";
+  f.style.left = Math.random() * 100 + "vw";
+  f.style.animationDuration = (Math.random() * 3 + 4) + "s";
+  document.body.appendChild(f);
+  setTimeout(() => f.remove(), 7000);
+}
+
+setInterval(flowerRain, 400);
 
 function growYes() {
   const yes = document.getElementById("yesBtn");
-  yes.style.transform = "scale(4)";
   yes.style.position = "fixed";
   yes.style.top = "50%";
   yes.style.left = "50%";
@@ -28,7 +35,7 @@ function growYes() {
 
 function yesClicked() {
   document.body.innerHTML = `
-    <div class="container">
+    <div class="page active">
       <h1>aku tau kok kalo kamu masih sayang aku 💙</h1>
     </div>
   `;
