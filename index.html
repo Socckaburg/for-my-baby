@@ -1,25 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>For You</title>
+  <meta charset="UTF-8">
+  <title>For You 💙</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <h1>this one for you my baby</h1>
-
-  <div class="buttons">
-    <a href="gift.html">
-      <img src="img/icon-gift.png">
-    </a>
-    <img src="img/icon-play.png" onclick="playMusic()">
-  </div>
-</div>
-
+<!-- AUDIO -->
 <audio id="music">
   <source src="always.mp3" type="audio/mpeg">
 </audio>
+
+<!-- PAGE 1 -->
+<section id="page1" class="page active">
+  <h1>this one for you my baby</h1>
+
+  <div class="buttons">
+    <img src="img/icon-gift.png" onclick="goPage(2)">
+    <img src="img/icon-play.png" onclick="playMusic()">
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2" class="page">
+  <h1>choose one 💙</h1>
+
+  <div class="buttons">
+    <img src="img/icon-1.png" onclick="goPage(3)">
+    <img src="img/icon-2.png" onclick="goPage(4)">
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section id="page3" class="page">
+  <div class="photos">
+    <img src="img/photo1.jpg" style="top:20%;left:10%">
+    <img src="img/photo2.jpg" style="top:40%;left:70%">
+    <img src="img/photo3.jpg" style="top:60%;left:20%">
+    <img src="img/photo4.jpg" style="top:30%;left:45%">
+    <img src="img/photo5.jpg" style="top:65%;left:55%">
+  </div>
+
+  <button onclick="goPage(2)">⬅ back</button>
+</section>
+
+<!-- PAGE 4 -->
+<section id="page4" class="page">
+  <div class="message-box">
+    <p>
+      Tiga tahun yang kita lalui bukan waktu yang singkat.
+      Ada tawa, luka, rindu, dan pelajaran yang membentuk aku hari ini.
+      Aku minta maaf karena belum selalu bisa jadi yang terbaik,
+      belum selalu hadir seperti yang kamu harapkan.
+    </p>
+
+    <h3>kamu masih sayang aku ga?</h3>
+
+    <div class="choice">
+      <button id="yesBtn" onclick="yesClicked()">Yes</button>
+      <button id="noBtn" onclick="growYes()">No</button>
+    </div>
+  </div>
+</section>
 
 <script src="script.js"></script>
 </body>
