@@ -1,3 +1,9 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BODY */
 body {
   margin: 0;
   background: #0b1d2a;
@@ -6,8 +12,10 @@ body {
   overflow: hidden;
 }
 
+/* PAGE SYSTEM */
 .page {
   display: none;
+  width: 100%;
   height: 100vh;
   text-align: center;
   padding-top: 80px;
@@ -17,31 +25,43 @@ body {
   display: block;
 }
 
+/* BUTTON ICONS */
 .buttons img {
   width: 90px;
   margin: 20px;
   cursor: pointer;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 
 .buttons img:hover {
   transform: scale(1.15);
 }
 
-/* PHOTO FLOAT */
+/* ===================== */
+/* PHOTOS (INI PENTING) */
+/* ===================== */
+
+.photos {
+  position: relative;   /* WAJIB */
+  width: 100%;
+  height: 100vh;
+}
+
 .photos img {
   position: absolute;
   width: 150px;
+  border-radius: 12px;
   animation: float 6s infinite ease-in-out;
 }
 
+/* ANIMASI FOTO */
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-25px); }
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-25px); }
   100% { transform: translateY(0); }
 }
 
-/* FLOWER */
+/* FLOWER EFFECT */
 .flower {
   position: fixed;
   top: -20px;
@@ -50,23 +70,34 @@ body {
 }
 
 @keyframes fall {
-  to { transform: translateY(110vh); }
+  to {
+    transform: translateY(110vh);
+  }
 }
 
-/* PAGE 4 */
+/* PAGE 4 MESSAGE */
 .message-box {
   max-width: 600px;
   margin: auto;
   line-height: 1.8;
 }
 
+/* CHOICE BUTTON */
 .choice button {
   padding: 12px 30px;
   margin: 15px;
   border-radius: 25px;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
-#yesBtn { background: #3498db; color: white; }
-#noBtn { background: #555; color: white; }
+#yesBtn {
+  background: #3498db;
+  color: white;
+}
+
+#noBtn {
+  background: #555;
+  color: white;
+}
